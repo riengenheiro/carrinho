@@ -1,5 +1,4 @@
 ---
-// BaseLayout.astro
 import '../styles/global.css';
 
 interface Props {
@@ -9,7 +8,7 @@ interface Props {
 
 const { 
   title, 
-  description = "Análise honesta e independente dos melhores carrinhos de bebê de luxo no Brasil em 2026. Encontre a escolha segura para o seu bebê." 
+  description = "Guia independente dos melhores carrinhos de bebê premium do Brasil em 2026. Análises honestas para proteger quem você mais ama." 
 } = Astro.props;
 ---
 
@@ -22,108 +21,86 @@ const {
     <title>{title}</title>
     <meta name="description" content={description} />
     
-    <!-- Fontes Premium -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
-    <!-- COPIAR E COLAR SEU PIXEL DO FACEBOOK / TIKTOK / GOOGLE TAG AQUI -->
-    <!-- 
-      Exemplo de integração do Pixel do Facebook:
-      <script>
-        !function(f,b,e,v,n,t,s)
-        {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-        n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-        if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-        n.queue=[];t=b.createElement(e);t.async=!0;
-        t.src=v;s=b.getElementsByTagName(e)[0];
-        s.parentNode.insertBefore(t,s)}(window, document,'script',
-        'https://connect.facebook.net/en_US/fbevents.js');
-        fbq('init', 'SEU_PIXEL_AQUI');
-        fbq('track', 'PageView');
-      </script>
-    -->
-    <!-- 
-      Exemplo de integração do Google Ads / GA4:
-      <script async src="https://www.googletagmanager.com/gtag/js?id=UA-SEU-ID-AQUI"></script>
-      <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'SEU-ID-AQUI');
-      </script>
-    -->
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
   </head>
-  <body class="bg-slate-50 text-gray-800 font-sans antialiased min-h-screen flex flex-col">
-    <!-- Aviso Editorial Amigável Superior -->
-    <div class="bg-slate-900 text-slate-300 text-xs text-center py-2 px-4 border-b border-slate-800">
-      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-center items-center gap-1">
-        <span>🔒 100% Independente. Nós testamos e selecionamos os produtos de forma autônoma.</span>
-        <span class="hidden sm:inline">•</span>
-        <span class="text-amber-400">Como parceiro da Amazon, ganhamos comissão sobre compras qualificadas sem nenhum custo extra para você.</span>
+
+  <body class="min-h-screen flex flex-col">
+
+    <!-- Barra de confiança -->
+    <div class="bg-warm-900 text-cream-200 text-[11px] sm:text-xs text-center py-2.5 px-4">
+      <div class="max-w-6xl mx-auto flex flex-col sm:flex-row justify-center items-center gap-1 sm:gap-3">
+        <span class="flex items-center gap-1.5 opacity-80">
+          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+          100% Independente — Testamos e selecionamos de forma autônoma
+        </span>
+        <span class="hidden sm:inline text-warm-600">|</span>
+        <span class="text-gold-300 opacity-90">Parceiro Amazon — Comissão sobre compras qualificadas, sem custo extra para você</span>
       </div>
     </div>
 
-    <!-- Conteúdo Principal -->
+    <!-- Conteúdo -->
     <div class="flex-grow">
       <slot />
     </div>
 
-    <!-- Rodapé Legal Obrigatório Amazon -->
-    <footer class="bg-white border-t border-slate-200 mt-20 py-12 px-4 text-slate-500 text-xs">
-      <div class="max-w-4xl mx-auto space-y-6 text-center">
-        <p class="leading-relaxed">
-          <strong>Aviso de Afiliados:</strong> Este site é de propriedade editorial e participa do Programa de Associados da Amazon Serviços de Varejo Ltda. no Brasil. Todos os links que redirecionam para a Amazon são links de afiliados estruturados com o nosso identificador de rastreamento. Nós recebemos uma comissão de 13% sobre compras qualificadas realizadas na Amazon Brasil originadas por cliques a partir deste site, o que não altera em nada o valor final cobrado de você. Isso nos ajuda a manter o site no ar e continuar produzindo guias independentes de alta qualidade.
-        </p>
-        <p class="leading-relaxed">
-          Os preços, ofertas e disponibilidade de estoque dos produtos mencionados estão em constante atualização nos servidores da Amazon e podem sofrer alterações sem aviso prévio. As fotos amadoras de produtos aqui utilizadas são de curadoria pública ou extraídas de avaliações voluntárias de compradores reais na Amazon, com caráter meramente ilustrativo.
-        </p>
-        <div class="pt-4 border-t border-slate-100 flex flex-col sm:flex-row justify-between items-center gap-4 text-[11px] text-slate-400">
-          <p>© 2026 Travel System Safety - Guia Independente de Enxoval de Bebê</p>
-          <div class="flex gap-4">
-            <a href="#" class="hover:text-slate-600 transition-colors">Políticas de Privacidade</a>
-            <span>|</span>
-            <a href="#" class="hover:text-slate-600 transition-colors">Termos de Uso</a>
-            <span>|</span>
-            <a href="#" class="hover:text-slate-600 transition-colors">Contato</a>
+    <!-- Rodapé -->
+    <footer class="bg-warm-900 text-warm-300 mt-24">
+      <div class="max-w-4xl mx-auto px-6 py-16 space-y-10">
+
+        <div class="text-center space-y-4">
+          <p class="font-serif text-2xl text-cream-100">Travel System Safety</p>
+          <div class="section-divider"></div>
+          <p class="text-warm-400 text-sm max-w-xl mx-auto leading-relaxed">
+            Guia independente criado por pais, para pais. Porque a segurança de quem a gente ama não tem preço — mas merece a melhor escolha.
+          </p>
+        </div>
+
+        <div class="bg-warm-800/50 rounded-2xl p-6 text-xs text-warm-400 leading-relaxed space-y-3">
+          <p>
+            <strong class="text-warm-300">Aviso de Afiliados:</strong> Este site participa do Programa de Associados da Amazon Serviços de Varejo Ltda. Links que redirecionam para a Amazon são links de afiliados com nosso identificador de rastreamento. Recebemos comissão sobre compras qualificadas, sem alterar o valor cobrado de você.
+          </p>
+          <p>
+            Preços, ofertas e disponibilidade estão sujeitos a alteração sem aviso prévio. Imagens são ilustrativas e podem representar edições diferentes das disponíveis.
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-between items-center gap-4 pt-6 border-t border-warm-800 text-[11px] text-warm-500">
+          <p>&copy; 2026 Travel System Safety</p>
+          <div class="flex gap-6">
+            <a href="#" class="hover:text-cream-200 transition-colors">Privacidade</a>
+            <a href="#" class="hover:text-cream-200 transition-colors">Termos</a>
+            <a href="#" class="hover:text-cream-200 transition-colors">Contato</a>
           </div>
         </div>
       </div>
     </footer>
 
-    <!-- SCRIPT DE RASTREAMENTO INTELIGENTE (CLIQUE DE SAÍDA) -->
+    <!-- Scroll Reveal -->
     <script is:inline>
       document.addEventListener('DOMContentLoaded', () => {
-        // Encontra todos os botões de afiliado do site
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.scroll-reveal').forEach(el => observer.observe(el));
+
         const affiliateButtons = document.querySelectorAll('a[data-affiliate-btn]');
-
         affiliateButtons.forEach(button => {
-          button.addEventListener('click', (event) => {
+          button.addEventListener('click', () => {
             const productName = button.getAttribute('data-product-name') || 'Produto Amazon';
-            const destinationUrl = button.getAttribute('href');
-
-            // 1. DISPARA EVENTO DO FACEBOOK PIXEL (Se configurado)
             if (typeof fbq === 'function') {
-              fbq('track', 'Lead', {
-                content_name: productName,
-                content_category: 'Carrinhos de Bebe Luxo',
-                value: 0.00,
-                currency: 'BRL'
-              });
-              console.log(`[Pixel] Evento Lead disparado para: ${productName}`);
+              fbq('track', 'Lead', { content_name: productName, content_category: 'Carrinhos de Bebe', value: 0.00, currency: 'BRL' });
             }
-
-            // 2. DISPARA EVENTO DO GOOGLE TAG (Se configurado)
             if (typeof gtag === 'function') {
-              gtag('event', 'outbound_click', {
-                'event_category': 'affiliate',
-                'event_label': productName,
-                'transport_type': 'beacon'
-              });
-              console.log(`[Google] Evento outbound_click disparado para: ${productName}`);
+              gtag('event', 'outbound_click', { event_category: 'affiliate', event_label: productName, transport_type: 'beacon' });
             }
-
-            // O redirecionamento nativo do link acontecerá após o disparo do clique (com target="_blank")
           });
         });
       });

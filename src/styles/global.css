@@ -2,19 +2,142 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Estilos adicionais para melhorar a legibilidade e transições */
-body {
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: #FFFDF7;
+    color: #4A3125;
+    font-feature-settings: 'liga' 1, 'kern' 1;
+  }
+
+  ::selection {
+    background-color: #FFE6A8;
+    color: #4A3125;
+  }
 }
 
-/* Efeito de hover suave para botões */
-.btn-amazon {
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+@layer components {
+  .btn-primary {
+    @apply relative inline-flex items-center justify-center gap-2
+           bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600
+           text-white font-bold tracking-wide
+           px-8 py-4 rounded-2xl
+           transition-all duration-300 ease-out
+           overflow-hidden;
+    box-shadow: 0 4px 14px 0 rgba(230, 126, 34, 0.35);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px 0 rgba(230, 126, 34, 0.45);
+  }
+
+  .btn-primary:active {
+    transform: translateY(0);
+  }
+
+  .btn-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.2) 45%,
+      rgba(255, 255, 255, 0.3) 50%,
+      rgba(255, 255, 255, 0.2) 55%,
+      transparent 60%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  .badge-premium {
+    @apply inline-flex items-center gap-1.5
+           bg-gradient-to-r from-gold-100 to-cream-200
+           text-warm-800 border border-gold-200
+           text-xs font-bold px-4 py-1.5 rounded-full
+           uppercase tracking-widest;
+  }
+
+  .badge-green {
+    @apply inline-flex items-center gap-1.5
+           bg-sage-50 text-sage-600 border border-sage-200
+           text-xs font-bold px-4 py-1.5 rounded-full
+           uppercase tracking-widest;
+  }
+
+  .badge-rose {
+    @apply inline-flex items-center gap-1.5
+           bg-blush-50 text-blush-500 border border-blush-200
+           text-xs font-bold px-4 py-1.5 rounded-full
+           uppercase tracking-widest;
+  }
+
+  .section-divider {
+    @apply w-16 h-1 rounded-full bg-gradient-to-r from-gold-300 to-warm-300 mx-auto;
+  }
+
+  .card-glass {
+    @apply bg-white/80 backdrop-blur-sm rounded-3xl border border-white/60
+           shadow-card transition-all duration-500;
+  }
+
+  .card-glass:hover {
+    @apply shadow-card-hover;
+    transform: translateY(-2px);
+  }
+
+  .prose-warm h2 {
+    @apply font-serif text-2xl sm:text-3xl text-warm-900 mb-4;
+  }
+
+  .prose-warm p {
+    @apply text-warm-700 leading-relaxed text-base sm:text-lg mb-4;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-warm-800 via-warm-600 to-warm-800 
+           bg-clip-text text-transparent;
+  }
+
+  .scroll-reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+  }
+
+  .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.btn-amazon:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  .btn-primary::after {
+    animation: none;
+  }
 }
