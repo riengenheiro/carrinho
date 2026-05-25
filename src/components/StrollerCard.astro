@@ -1,0 +1,146 @@
+---
+// StrollerCard.astro
+interface Stroller {
+  id: string;
+  name: string;
+  category: string;
+  badge: string;
+  priceTier: string;
+  priceLabel: string;
+  weight: string;
+  capacity: string;
+  verdict: string;
+  pros: string[];
+  cons: string[];
+  image: string;
+  affiliateLink: string;
+}
+
+interface Props {
+  stroller: Stroller;
+}
+
+const { stroller } = Astro.props;
+---
+
+<div id={stroller.id} class="bg-white rounded-2xl shadow-sm border border-slate-100 p-6 md:p-8 space-y-6 scroll-mt-20">
+  
+  <!-- Selo e Título -->
+  <div class="space-y-3">
+    <div class="flex flex-wrap items-center gap-2">
+      <span class="bg-amber-100 text-amber-900 border border-amber-200 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">
+        ⭐ {stroller.badge}
+      </span>
+      <span class="bg-slate-100 text-slate-700 text-xs font-semibold px-3 py-1 rounded-full">
+        Preço: {stroller.priceTier} ({stroller.priceLabel})
+      </span>
+    </div>
+    <h3 class="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight">
+      {stroller.name}
+    </h3>
+  </div>
+
+  <!-- Layout de Conteúdo: Imagem de Curadoria à Esquerda, Especificações à Direita -->
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-8 items-start">
+    <div class="md:col-span-5 space-y-3">
+      <!-- Imagem Retirada de Comentários / Curadoria de Clientes Reais -->
+      <div class="relative bg-slate-100 rounded-xl overflow-hidden shadow-inner border border-slate-200 group">
+        <img 
+          src={stroller.image} 
+          alt={`Curadoria do modelo real ${stroller.name}`} 
+          class="w-full h-auto max-h-[300px] object-cover mx-auto"
+        />
+        <!-- Marca D'água para passar sensação de Curadoria Independente -->
+        <span class="absolute bottom-2 right-2 bg-black/60 text-[9px] text-white px-2 py-0.5 rounded backdrop-blur-sm">
+          📸 Curadoria de Fotos de Compradores Reais da Amazon
+        </span>
+      </div>
+      <p class="text-[10px] text-center text-slate-400 italic">
+        *A tonalidade do tecido e detalhes podem variar conforme a edição disponível na Amazon Brasil.
+      </p>
+    </div>
+
+    <!-- Especificações Principais -->
+    <div class="md:col-span-7 space-y-4">
+      <div class="bg-slate-50 p-4 rounded-xl space-y-3 border border-slate-100">
+        <h4 class="text-xs font-bold uppercase tracking-wider text-slate-400">Especificações Técnicas Reais</h4>
+        <div class="grid grid-cols-2 gap-y-3 gap-x-6 text-sm">
+          <div>
+            <span class="block text-xs text-slate-400">Peso do Produto:</span>
+            <span class="font-semibold text-slate-700">{stroller.weight}</span>
+          </div>
+          <div>
+            <span class="block text-xs text-slate-400">Capacidade de Uso:</span>
+            <span class="font-semibold text-slate-700">{stroller.capacity}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- O Veredito Rápido -->
+      <div class="space-y-1">
+        <h4 class="text-sm font-bold text-slate-900">O Veredito Rápido:</h4>
+        <p class="text-slate-600 text-sm leading-relaxed">{stroller.verdict}</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prós e Contras Sinceros (Formato de Duas Colunas Visuais) -->
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4 border-t border-slate-100">
+    
+    <!-- Coluna de Prós -->
+    <div class="bg-emerald-50/50 rounded-xl p-5 border border-emerald-100/50 space-y-3">
+      <h4 class="text-sm font-bold text-emerald-800 flex items-center gap-1.5 uppercase tracking-wide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7" />
+        </svg>
+        Por Que Vale Cada Centavo:
+      </h4>
+      <ul class="space-y-2">
+        {stroller.pros.map((pro) => (
+          <li class="text-xs text-slate-600 flex items-start gap-2 leading-relaxed">
+            <span class="text-emerald-500 font-bold">✓</span>
+            <span>{pro}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+
+    <!-- Coluna de Contras Sincera -->
+    <div class="bg-rose-50/50 rounded-xl p-5 border border-rose-100/50 space-y-3">
+      <h4 class="text-sm font-bold text-rose-800 flex items-center gap-1.5 uppercase tracking-wide">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+        O que Você Deve Saber Antes de Comprar:
+      </h4>
+      <ul class="space-y-2">
+        {stroller.cons.map((con) => (
+          <li class="text-xs text-slate-600 flex items-start gap-2 leading-relaxed">
+            <span class="text-rose-400 font-bold">✗</span>
+            <span>{con}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
+
+  <!-- Botão Magnético de CTA Estilo Americano (Focado em Curiosidade e Ativação de Cookie de 24h) -->
+  <div class="pt-4 flex flex-col sm:flex-row items-center justify-between gap-4 border-t border-slate-100">
+    <div class="text-xs text-slate-400 text-center sm:text-left">
+      <span class="block">🔒 Compra segura diretamente na <strong>Amazon Brasil</strong>.</span>
+      <span class="block mt-0.5">Garantia oficial e frete facilitado pelo programa Amazon Prime.</span>
+    </div>
+    
+    <a 
+      href={stroller.affiliateLink}
+      target="_blank"
+      rel="noopener noreferrer"
+      data-affiliate-btn
+      data-product-name={stroller.name}
+      class="w-full sm:w-auto text-center bg-orange-500 hover:bg-orange-600 text-white font-extrabold text-base px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition-all uppercase tracking-wide btn-amazon"
+    >
+      Verificar Preço de Hoje na Amazon ↗
+    </a>
+  </div>
+
+</div>

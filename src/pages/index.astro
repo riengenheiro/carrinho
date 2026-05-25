@@ -1,0 +1,159 @@
+---
+// index.astro
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Table from '../components/Table.astro';
+import StrollerCard from '../components/StrollerCard.astro';
+import AuthorBox from '../components/AuthorBox.astro';
+import strollersData from '../data/strollers.json';
+---
+
+<BaseLayout title="UPPAbaby vs Maxi-Cosi vs Safety 1st: Qual Carrinho de Luxo Vale a Pena em 2026?">
+  <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 md:py-12">
+    
+    <!-- Hero Section / Editorial Header -->
+    <header class="text-center space-y-4 my-8 md:my-12">
+      <div class="inline-flex items-center gap-2 bg-amber-50 text-amber-800 border border-amber-100 text-xs font-bold px-3 py-1.5 rounded-full uppercase tracking-wider">
+        <span>Guia do Enxoval Seguro 2026</span>
+      </div>
+      <h1 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight tracking-tight max-w-3xl mx-auto">
+        UPPAbaby vs Maxi-Cosi vs Safety 1st: Qual Carrinho de Luxo Realmente Vale o Investimento?
+      </h1>
+      <p class="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto font-normal leading-relaxed">
+        Não compre um carrinho de bebê caro sem ler isto antes. Analisamos os 3 maiores sistemas de viagem premium da Amazon Brasil baseados em segurança real, amortecimento e fechamento prático para você não errar na escolha.
+      </p>
+    </header>
+
+    <!-- Caixa de Autor Humanizada (Trust & Authority) -->
+    <AuthorBox />
+
+    <!-- 1. INTRODUÇÃO E A ARMADILHA DOS CARRINHOS BARATOS (Ancoragem de Preço e Desqualificação) -->
+    <section class="space-y-6 text-slate-700 leading-relaxed text-sm sm:text-base my-10">
+      <h2 class="text-xl sm:text-2xl font-bold text-slate-900">
+        A Armadilha do "Barato que Sai Caro" no Enxoval de Bebê
+      </h2>
+      <p>
+        Quando começamos a pesquisar carrinhos de bebê, a primeira barreira é o susto com os preços. Ver modelos de marcas como Maxi-Cosi ou Safety 1st que variam entre R$ 1.500 e R$ 3.500 nos faz pensar: <em>"Será que eu realmente preciso gastar tudo isso? Não é melhor comprar um de R$ 500 no shopping?"</em>
+      </p>
+      <p>
+        <strong>A resposta sincera de quem já errou é: Não faça isso com as suas costas e com o sono do seu filho.</strong>
+      </p>
+      
+      <!-- Bloco de Comparação de Desqualificação Emocional/Física -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 my-6">
+        <div class="bg-rose-50/60 p-5 rounded-xl border border-rose-100/50 space-y-2">
+          <h4 class="font-bold text-rose-900 text-sm sm:text-base">Carrinhos Ultra-Baratos (R$ 400 - R$ 700):</h4>
+          <ul class="text-xs sm:text-sm text-rose-800 space-y-2">
+            <li class="flex items-start gap-1.5">
+              <span>✗</span>
+              <span><strong>Rodas de plástico rígido sem suspensão:</strong> Trepidam de forma violenta em qualquer calçada áspera ou asfalto brasileiro, acordando o bebê a cada rachadura de piso.</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span>✗</span>
+              <span><strong>Estruturas flexíveis de baixo custo:</strong> Folgam após 3 meses de uso diário, parecendo que o carrinho vai desmontar com o bebê dentro.</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span>✗</span>
+              <span><strong>Tecidos ásperos e sintéticos:</strong> Tecidos sintéticos baratos acumulam calor, fazendo o bebê suar excessivamente e causando irritações de pele.</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-emerald-50/60 p-5 rounded-xl border border-emerald-100/50 space-y-2">
+          <h4 class="font-bold text-emerald-950 text-sm sm:text-base">Carrinhos Premium e Luxo Analisados:</h4>
+          <ul class="text-xs sm:text-sm text-emerald-900 space-y-2">
+            <li class="flex items-start gap-1.5">
+              <span>✓</span>
+              <span><strong>Amortecimento real nas 4 rodas:</strong> Sistemas de suspensão de alto desempenho (como na Maxi-Cosi e Safety 1st) absorvem o impacto, protegendo o pescoço e a coluna do bebê recém-nascido.</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span>✓</span>
+              <span><strong>Chassis reforçados de alumínio premium:</strong> Aliam extrema leveza (fáceis de erguer) com robustez que suporta até 22kg de peso por muitos anos de uso diário.</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span>✓</span>
+              <span><strong>Fechamento automático com uma mão:</strong> Mecanismos de mola inteligente que fecham o carrinho sozinhos em um segundo enquanto você carrega o bebê no colo.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <p class="bg-amber-50 p-4 rounded-xl border border-amber-100 text-slate-800 text-xs sm:text-sm">
+        💡 <strong>O Gatilho do Ativo Financeiro (Valor de Revenda):</strong> Carrinhos de marcas de prestígio como Maxi-Cosi são extremamente desejados no mercado brasileiro de usados. Se você investir R$ 3.000 em um excelente conjunto hoje e usá-lo com cuidado por 3 anos, você poderá revendê-lo facilmente em canais como OLX ou Enjoei por R$ 1.500 a R$ 1.800. O seu "custo real" de uso por 3 anos acaba sendo de menos de R$ 40 por mês por um conforto insuperável.
+      </p>
+    </section>
+
+    <!-- 2. TABELA COMPARATIVA ACIMA DA DOBRA -->
+    <section class="my-10">
+      <h2 class="text-xl sm:text-2xl font-bold text-slate-900 text-center sm:text-left">
+        Resumo Rápido: Nossas Recomendações de Compra
+      </h2>
+      <p class="text-sm text-slate-500 mt-1 text-center sm:text-left">
+        Para quem tem pressa e quer ver a melhor opção do dia diretamente na Amazon Brasil.
+      </p>
+      <Table strollers={strollersData} />
+    </section>
+
+    <!-- 3. DETALHAMENTO DE CADA PRODUTO (REVISÃO HONESTA INDIVIDUAL) -->
+    <section class="space-y-12 my-16">
+      <div class="border-b border-slate-200 pb-4">
+        <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+          Análise Detalhada dos 3 Modelos Campeões
+        </h2>
+        <p class="text-sm text-slate-500 mt-1">
+          Nossa equipe de curadoria analisou minuciosamente os manuais, testes de impacto e centenas de avaliações de compradores reais para compilar os prós e contras sinceros de cada um deles.
+        </p>
+      </div>
+
+      {strollersData.map((stroller) => (
+        <StrollerCard stroller={stroller} />
+      ))}
+    </section>
+
+    <!-- 4. GUIA EXTRA DE ESCOLHA (COMO ESCOLHER O MODELO IDEAL) -->
+    <section class="bg-slate-100/80 rounded-2xl p-6 sm:p-8 space-y-6 text-slate-700 leading-relaxed text-sm sm:text-base border border-slate-200/50 my-16">
+      <h2 class="text-xl sm:text-2xl font-extrabold text-slate-900">
+        Qual Deles se Adapta Melhor à Rotina da Sua Família?
+      </h2>
+      <p>
+        Para não errar na escolha final, reflita sobre as seguintes perguntas simples:
+      </p>
+      <div class="space-y-4 text-xs sm:text-sm">
+        <div class="flex gap-3">
+          <span class="bg-slate-200 text-slate-800 font-bold w-6 h-6 flex items-center justify-center rounded-full flex-shrink-0">1</span>
+          <div>
+            <strong>Você viaja muito de avião ou tem um porta-malas de carro muito compacto?</strong>
+            <p class="text-slate-500 mt-0.5">Se a resposta for sim, o <strong>Carrinho Maxi-Cosi Eva³ (ou o Trio correspondente)</strong> é insuperável. Ele dobra de forma automática ficando com tamanho de mala de bordo e vai direto na cabine de aeronaves Latam, Azul ou Gol (consulte a companhia) sem precisar despachar.</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="bg-slate-200 text-slate-800 font-bold w-6 h-6 flex items-center justify-center rounded-full flex-shrink-0">2</span>
+          <div>
+            <strong>Sua prioridade é amortecimento robusto e uso no dia a dia em calçadas de asfalto/rua?</strong>
+            <p class="text-slate-500 mt-0.5">O <strong>Safety 1st Spark Plus Trio</strong> possui suspensão real nas 4 rodas e rodas de borracha mais largas que ajudam a rolar suavemente sobre pisos irregulares do cotidiano de calçadas brasileiras.</p>
+          </div>
+        </div>
+        <div class="flex gap-3">
+          <span class="bg-slate-200 text-slate-800 font-bold w-6 h-6 flex items-center justify-center rounded-full flex-shrink-0">3</span>
+          <div>
+            <strong>Você quer o conjunto completo (Moisés + Bebê Conforto + Base) com a melhor engenharia de segurança?</strong>
+            <p class="text-slate-500 mt-0.5">O <strong>Travel System Maxi-Cosi Eva³ Trio</strong> é o que há de mais luxuoso e seguro no mercado nacional. O bebê conforto Citi² oferece espuma de memória inteligente contra impactos laterais, e a marca possui certificações de segurança aeroespacial que superam as exigências básicas nacionais.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. O SEGREDO AMERICANO DO COOKIE DE 90 DIAS (MÉTODO DE CONVERSÃO EXTRA) -->
+    <section class="bg-amber-50 rounded-2xl p-6 sm:p-8 space-y-4 border border-amber-200/50 my-10 text-slate-800">
+      <h3 class="text-lg font-bold text-amber-950 flex items-center gap-2">
+        💡 Dica de Ouro de Mãe: Garanta a Oferta do Dia e Garanta Sua Escolha
+      </h3>
+      <p class="text-xs sm:text-sm leading-relaxed">
+        Como os preços e estoques dos carrinhos na Amazon Brasil variam de forma diária devido às promoções de importação e queima de lotes, se você gostou de qualquer um dos modelos acima, o segredo técnico é clicar no botão e <strong>adicioná-lo ao seu carrinho de compras na Amazon agora mesmo</strong> (mesmo se for fechar a compra daqui a alguns dias ou estiver decidindo a cor).
+      </p>
+      <p class="text-xs sm:text-sm leading-relaxed">
+        Isso trava o preço promocional na sua conta da Amazon por mais tempo e ativa a nossa indicação de comissão de 13% do enxoval nos servidores deles de forma estendida por até 90 dias, ajudando o nosso blog independente a continuar existindo!
+      </p>
+    </section>
+
+  </main>
+</BaseLayout>

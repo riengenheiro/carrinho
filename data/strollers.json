@@ -1,0 +1,76 @@
+[
+  {
+    "id": "maxicosi-eva3-trio",
+    "name": "Travel System Maxi-Cosi Eva³ Trio",
+    "category": "Premium Trio",
+    "badge": "A Escolha Principal (Premium Completo)",
+    "priceTier": "$$$",
+    "priceLabel": "Premium / Alto Investimento",
+    "weight": "7,85 kg (Carrinho) + 3,1 kg (Bebê Conforto)",
+    "capacity": "Até 15 kg (carrinho) e 13 kg (bebê conforto)",
+    "verdict": "O sistema de viagem premium definitivo. Combina o carrinho ultracompacto Eva³ com o lendário bebê conforto Citi² (o mais leve do mercado, com redutor de memory foam) e base para o carro. Perfeito para pais exigentes que viajam ou buscam praticidade máxima urbana sem abrir mão da segurança extrema da Maxi-Cosi.",
+    "pros": [
+      "Bebê conforto Citi² é ultra leve (apenas 3,1 kg) e aprovado para uso em aviões",
+      "Redutor de assento com espuma de memória (Memory Foam) para recém-nascidos",
+      "Fechamento automático do carrinho com uma única mão e alça de transporte",
+      "Cinto de 5 pontos com fechamento magnético ultra rápido e prático",
+      "Mosquiteiro embutido com zíper frontal para fácil acesso e proteção UV50+",
+      "Garantia de 5 anos oficial Maxi-Cosi (referência global em segurança)"
+    ],
+    "cons": [
+      "Investimento inicial elevado",
+      "Rodas pequenas, exigindo maior cuidado em calçadas muito irregulares",
+      "Cesto porta-objetos de 5kg pode ficar apertado com mochilas de maternidade muito grandes"
+    ],
+    "affiliateLink": "https://amzn.to/4dOM2vV"
+  },
+  {
+    "id": "safety1st-spark-plus-trio",
+    "name": "Travel System Safety 1st Spark Plus Trio",
+    "category": "Cost Benefit Trio",
+    "badge": "Melhor Custo-Benefício Completo (Com Isofix)",
+    "priceTier": "$$",
+    "priceLabel": "Médio / Excelente Custo-Benefício",
+    "weight": "8,0 kg (Carrinho) + 3,4 kg (Bebê Conforto)",
+    "capacity": "Até 22 kg (carrinho - uso prolongado) e 13 kg (bebê conforto)",
+    "verdict": "O kit com o melhor custo-benefício que já vem completo com base Isofix inclusa. Oferece amortecimento robusto nas 4 rodas e fechamento automático compacto. Uma opção durável que acompanha o bebê desde o nascimento até os 22kg.",
+    "pros": [
+      "Já acompanha base veicular com sistema de fixação ISOFIX inclusa no pacote",
+      "Suporta até 22kg no carrinho, permitindo uso prolongado por muito mais anos",
+      "Amortecedores reais nas 4 rodas, tornando o passeio muito suave em pisos irregulares",
+      "Fechamento automático super compacto que cabe no bagageiro de aviões",
+      "Novo modelo atualizado já inclui visor (peep-a-boo) na capota do carrinho",
+      "Tecido extra macio e encosto ajustável em até 4 posições com uma mão"
+    ],
+    "cons": [
+      "Alça para empurrar não possui ajuste de altura para os pais",
+      "Assento do carrinho não é reversível (para inverter a direção e olhar para o bebê)",
+      "Não é possível retirar a capota do carrinho ao usar o bebê conforto acoplado"
+    ],
+    "affiliateLink": "https://amzn.to/42VCw52"
+  },
+  {
+    "id": "maxicosi-eva3-single",
+    "name": "Carrinho de Bebê Maxi-Cosi Eva³ (Apenas Carrinho)",
+    "category": "Compact/Travel",
+    "badge": "Melhor Escolha Compacta e de Viagem",
+    "priceTier": "$$",
+    "priceLabel": "Médio / Carrinho Premium Avulso",
+    "weight": "7,8 kg",
+    "capacity": "Até 22 kg (uso de recém-nascido a aproximadamente 4-5 anos)",
+    "verdict": "Para famílias que já possuem um bebê conforto ou buscam apenas o melhor e mais moderno carrinho de passeio compacto do mercado. O Eva³ traz fechamento automático ultra compacto, cinto magnético e mosquiteiro embutido, feito com tecidos reciclados sustentáveis de garrafas PET.",
+    "pros": [
+      "Extremamente compacto quando fechado (24 x 49,5 x 55,5 cm), vai direto na cabine do avião",
+      "Cinto de segurança com fivela magnética (fecha instantaneamente por aproximação)",
+      "Vem com mosquiteiro exclusivo de zíper frontal e capota com proteção UV50+",
+      "Tecidos ecológicos premium ultra macios feitos de garrafas PET recicladas",
+      "Garantia de 5 anos oficial Maxi-Cosi para tranquilidade a longo prazo"
+    ],
+    "cons": [
+      "Neste anúncio vem apenas o carrinho de passeio (não inclui bebê conforto e base)",
+      "O encosto, mesmo na posição mais ereta, ainda fica sutilmente deitado",
+      "O encaixe da barra frontal de segurança pode ser um pouco firme para remover"
+    ],
+    "affiliateLink": "https://amzn.to/3PXs2PI"
+  }
+]

@@ -1,0 +1,125 @@
+---
+// Table.astro
+interface Stroller {
+  id: string;
+  name: string;
+  category: string;
+  badge: string;
+  priceTier: string;
+  priceLabel: string;
+  weight: string;
+  capacity: string;
+  verdict: string;
+  affiliateLink: string;
+}
+
+interface Props {
+  strollers: Stroller[];
+}
+
+const { strollers } = Astro.props;
+---
+
+<div class="bg-white rounded-2xl shadow-md border border-slate-100 overflow-hidden my-10">
+  <div class="p-6 bg-slate-900 text-white">
+    <h3 class="text-xl font-bold">Resumo Comparativo dos Modelos</h3>
+    <p class="text-sm text-slate-300 mt-1">Veja as principais especificações lado a lado e tome a decisão certa.</p>
+  </div>
+
+  <!-- Versão Desktop (Tabela Completa) - Oculta em telas pequenas -->
+  <div class="hidden md:block overflow-x-auto">
+    <table class="w-full text-left border-collapse">
+      <thead>
+        <tr class="bg-slate-50 border-b border-slate-100 text-xs font-semibold text-slate-500 uppercase tracking-wider">
+          <th class="py-4 px-6">Modelo</th>
+          <th class="py-4 px-6 text-center">Classificação</th>
+          <th class="py-4 px-6 text-center">Faixa de Preço</th>
+          <th class="py-4 px-6 text-center">Peso do Carrinho</th>
+          <th class="py-4 px-6 text-center">Limite de Peso</th>
+          <th class="py-4 px-6 text-right">Ação</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-slate-100 text-sm text-slate-600">
+        {strollers.map((stroller) => (
+          <tr class="hover:bg-slate-50 transition-colors">
+            <td class="py-5 px-6 font-medium text-slate-900">
+              <div>
+                <span class="block text-slate-900 font-semibold">{stroller.name}</span>
+                <span class="text-xs text-slate-400 font-normal block mt-0.5">{stroller.category}</span>
+              </div>
+            </td>
+            <td class="py-5 px-6 text-center">
+              <span class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50 text-amber-800 border border-amber-100">
+                ⭐ {stroller.badge}
+              </span>
+            </td>
+            <td class="py-5 px-6 text-center">
+              <div class="flex flex-col items-center">
+                <span class="text-amber-500 font-bold tracking-widest text-base">{stroller.priceTier}</span>
+                <span class="text-[10px] text-slate-400 mt-0.5">{stroller.priceLabel}</span>
+              </div>
+            </td>
+            <td class="py-5 px-6 text-center font-medium text-slate-700">{stroller.weight.split(" ")[0]} {stroller.weight.split(" ")[1] || ""}</td>
+            <td class="py-5 px-6 text-center text-slate-500">{stroller.capacity.split(" ")[1]} {stroller.capacity.split(" ")[2] || "15kg"}</td>
+            <td class="py-5 px-6 text-right">
+              <a 
+                href={stroller.affiliateLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                data-affiliate-btn
+                data-product-name={stroller.name}
+                class="inline-block bg-orange-500 hover:bg-orange-600 text-white font-bold py-2.5 px-5 rounded-lg text-xs tracking-wide shadow-sm hover:shadow transition-all uppercase btn-amazon"
+              >
+                Verificar Estoque ↗
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Versão Mobile (Cards Compactos) - Exclusiva para Celulares -->
+  <div class="block md:hidden divide-y divide-slate-100">
+    {strollers.map((stroller) => (
+      <div class="p-6 space-y-4">
+        <div class="flex justify-between items-start">
+          <div>
+            <h4 class="font-bold text-slate-900 text-base">{stroller.name}</h4>
+            <span class="text-xs text-slate-400">{stroller.category}</span>
+          </div>
+          <div class="text-right">
+            <span class="text-amber-500 font-extrabold block text-lg tracking-wider">{stroller.priceTier}</span>
+            <span class="text-[9px] text-slate-400 block uppercase font-medium">{stroller.priceLabel.split(" ")[0]}</span>
+          </div>
+        </div>
+
+        <div class="inline-block px-2.5 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-800 border border-amber-100">
+          ⭐ {stroller.badge}
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 text-xs bg-slate-50 p-3 rounded-lg text-slate-600">
+          <div>
+            <span class="text-slate-400 block font-medium mb-0.5">Peso do Carrinho</span>
+            <span class="font-semibold text-slate-800">{stroller.weight.split("(")[0]}</span>
+          </div>
+          <div>
+            <span class="text-slate-400 block font-medium mb-0.5">Capacidade</span>
+            <span class="font-semibold text-slate-800">{stroller.capacity.split("(")[0]}</span>
+          </div>
+        </div>
+
+        <a 
+          href={stroller.affiliateLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          data-affiliate-btn
+          data-product-name={stroller.name}
+          class="w-full text-center block bg-orange-500 hover:bg-orange-600 text-white font-bold py-3 px-4 rounded-xl text-sm shadow-sm transition-all uppercase btn-amazon"
+        >
+          Verificar Preço de Hoje na Amazon ↗
+        </a>
+      </div>
+    ))}
+  </div>
+</div>
