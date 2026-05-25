@@ -10,6 +10,7 @@ interface Stroller {
   weight: string;
   capacity: string;
   verdict: string;
+  image: string;
   affiliateLink: string;
 }
 
@@ -39,9 +40,14 @@ const styles = [
             <div class="absolute top-3 right-3 w-12 h-12 rounded-full bg-white/20 animate-float"></div>
             <div class="absolute bottom-4 left-4 w-8 h-8 rounded-full bg-white/15 animate-float-delayed"></div>
             
-            {/* Espaço para imagem do produto */}
-            <div class="w-32 h-32 mx-auto rounded-3xl bg-white/40 backdrop-blur-sm shadow-soft flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-500 border-2 border-white/50">
-              <span class="text-5xl">{s.emoji}</span>
+            {/* Imagem do produto */}
+            <div class="w-32 h-32 mx-auto rounded-3xl bg-white/40 backdrop-blur-sm shadow-soft overflow-hidden mb-4 group-hover:scale-105 transition-transform duration-500 border-2 border-white/50">
+              <img 
+                src={stroller.image} 
+                alt={stroller.name}
+                class="w-full h-full object-contain p-2"
+                loading="lazy"
+              />
             </div>
             
             <span class={`${s.badgeClass} text-[10px]`}>

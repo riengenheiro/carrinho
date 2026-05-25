@@ -12,6 +12,7 @@ interface Stroller {
   verdict: string;
   pros: string[];
   cons: string[];
+  image: string;
   affiliateLink: string;
 }
 
@@ -46,12 +47,13 @@ const gradient = gradients[index % gradients.length];
         {/* Espaço para foto do produto */}
         <div class="flex-shrink-0">
           <div class="relative">
-            <div class="w-52 h-52 sm:w-60 sm:h-60 rounded-[2rem] bg-white/50 backdrop-blur-sm shadow-image border-2 border-white/60 flex items-center justify-center overflow-hidden group">
-              {/* Substituir com <img> quando tiver as fotos */}
-              <div class="text-center space-y-2 p-4">
-                <span class="text-6xl block">{stroller.badgeIcon === '👑' ? '🍼' : stroller.badgeIcon === '⭐' ? '🛡️' : '✈️'}</span>
-                <p class="text-text-light text-xs font-medium">Adicione a foto aqui</p>
-              </div>
+            <div class="w-52 h-52 sm:w-60 sm:h-60 rounded-[2rem] bg-white/50 backdrop-blur-sm shadow-image border-2 border-white/60 overflow-hidden group">
+              <img 
+                src={stroller.image} 
+                alt={stroller.name}
+                class="w-full h-full object-contain p-3 group-hover:scale-105 transition-transform duration-700"
+                loading="lazy"
+              />
             </div>
             {/* Badge flutuante */}
             <div class="absolute -bottom-3 left-1/2 -translate-x-1/2">
