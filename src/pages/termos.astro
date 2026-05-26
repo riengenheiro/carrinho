@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const title = 'Termos de Uso | BebêSeguro';
+const description = 'Termos e condições de uso do guia BebêSeguro sobre carrinhos de bebê e links de afiliados Amazon.';
+const contactEmail = 'contato@bebeseguro.com.br';
+---
+
+<BaseLayout title={title} description={description}>
+  <article class="max-w-3xl mx-auto px-5 sm:px-8 py-12 sm:py-16">
+    <header class="mb-10 space-y-3">
+      <a href="/" class="text-brand-500 text-sm font-medium hover:underline">← Voltar ao guia</a>
+      <h1 class="font-display text-3xl sm:text-4xl text-text-primary">Termos de Uso</h1>
+      <p class="text-text-light text-sm">Última atualização: 26 de maio de 2026</p>
+    </header>
+
+    <div class="prose-warm space-y-8 text-text-secondary text-sm sm:text-base leading-relaxed">
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">1. Aceitação</h2>
+        <p>
+          Ao acessar o site <strong class="text-text-primary">BebêSeguro</strong>, você concorda com estes Termos de Uso e com nossa <a href="/privacidade" class="text-brand-500 hover:underline">Política de Privacidade</a>. Se não concordar, interrompa o uso do site.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">2. Natureza do conteúdo</h2>
+        <p>
+          O BebêSeguro é um <strong class="text-text-primary">guia editorial informativo</strong>. As análises, comparações e recomendações têm caráter orientativo e não substituem a leitura das especificações oficiais do fabricante, nem aconselhamento médico, pediátrico ou jurídico.
+        </p>
+        <p>
+          Preços, disponibilidade, cores e condições de venda são definidos exclusivamente pela Amazon Brasil e podem mudar sem aviso prévio.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">3. Programa de afiliados Amazon</h2>
+        <p>
+          Este site participa do Programa de Associados da Amazon Serviços de Varejo Ltda. Links que direcionam para a Amazon são links de afiliados. Podemos receber comissão sobre compras qualificadas, sem alterar o preço pago por você.
+        </p>
+        <p>
+          A Amazon e outras marcas citadas são propriedade de seus respectivos titulares. O BebêSeguro não é afiliado oficial das marcas de produtos analisados, exceto na relação de associado Amazon descrita acima.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">4. Uso permitido</h2>
+        <p>Você pode utilizar o site para consulta pessoal e não comercial. É proibido:</p>
+        <ul class="list-disc pl-5 space-y-2">
+          <li>Copiar, reproduzir ou redistribuir o conteúdo em massa sem autorização;</li>
+          <li>Usar o site de forma que prejudique sua operação ou a de terceiros;</li>
+          <li>Publicar informações falsas atribuídas ao BebêSeguro;</li>
+          <li>Tentar acessar áreas restritas ou sistemas do site sem permissão.</li>
+        </ul>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">5. Propriedade intelectual</h2>
+        <p>
+          Textos, layout, identidade visual e organização editorial do BebêSeguro são protegidos por direitos autorais. Imagens de produtos podem pertencer a fabricantes, varejistas ou compradores que as publicaram na Amazon; usamos imagens com caráter ilustrativo conforme descrito no site.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">6. Limitação de responsabilidade</h2>
+        <p>
+          Empregamos esforço para manter informações precisas e atualizadas, mas não garantimos que estejam sempre completas ou livres de erros. O uso das informações e a decisão de compra são de sua exclusiva responsabilidade.
+        </p>
+        <p>
+          O BebêSeguro não se responsabiliza por danos diretos ou indiretos decorrentes do uso do site, de links externos ou de produtos adquiridos em sites de terceiros.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">7. Links externos</h2>
+        <p>
+          Links para a Amazon e outros sites são fornecidos para sua conveniência. Não controlamos nem endossamos o conteúdo, políticas ou práticas de sites de terceiros.
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">8. Contato</h2>
+        <p>
+          Dúvidas sobre estes termos ou sobre privacidade podem ser enviadas para:
+          <a href={`mailto:${contactEmail}`} class="text-brand-500 hover:underline font-medium">{contactEmail}</a>
+        </p>
+      </section>
+
+      <section class="space-y-3">
+        <h2 class="font-display text-xl text-text-primary">9. Lei aplicável</h2>
+        <p>
+          Estes termos são regidos pelas leis da República Federativa do Brasil. Fica eleito o foro da comarca do domicílio do usuário no Brasil, salvo disposição legal em contrário.
+        </p>
+      </section>
+    </div>
+  </article>
+</BaseLayout>
